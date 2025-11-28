@@ -1,0 +1,47 @@
+# Packing List CMS - Apache Configuration
+# This file ensures proper URL handling and redirects
+
+# Enable rewrite engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Prevent directory listing
+    Options -Indexes
+    
+    # Handle trailing slashes
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /$1 [L,R=301]
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # XSS Protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# PHP configuration
+<IfModule mod_php7.c>
+    php_flag display_errors Off
+    php_flag log_errors On
+</IfModule>
+
+# Prevent access to sensitive files
+<FilesMatch "^(\.htaccess|\.git|config|includes|sql)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Allow access to CSS and other assets
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
