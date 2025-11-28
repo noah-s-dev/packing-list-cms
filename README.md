@@ -92,7 +92,7 @@ packing-list-cms/
 #### 1. Download and Extract
 ```bash
 # Clone or download the project files
-git clone <repository-url> packing-list-cms
+git clone https://github.com/noah-s-dev/packing-list-cms.git
 cd packing-list-cms
 ```
 
@@ -241,7 +241,7 @@ ini_set('display_errors', 1);
 
 **License for RiverTheme**
 
-[RiverTheme.com](https://RiverTheme.com) makes this project available for demo, instructional, and personal use. You can ask for or buy a license from [RiverTheme.com](https://RiverTheme.com) if you want a pro website, sophisticated features, or expert setup and assistance. A Pro license is needed for production deployments, customizations, and commercial use.
+RiverTheme makes this project available for demo, instructional, and personal use. You can ask for or buy a license from [RiverTheme.com](https://RiverTheme.com) if you want a pro website, sophisticated features, or expert setup and assistance. A Pro license is needed for production deployments, customizations, and commercial use.
 
 **Disclaimer**
 
@@ -250,6 +250,3 @@ The free version is offered "as is" with no warranty and might not function on a
 ---
 
 **Packing List CMS** - Simple trip organization made easy.
-
-*Developed by [RiverTheme](https://rivertheme.com)*
-
